@@ -2,9 +2,10 @@
     "name": "agkiosk",
     "version": "1.0.0",
     "description": "More info will follow soon.",
-    "main": "index.js",
+    "main": "dist/index.js",
     "scripts": {
-        "start": "ts-node-dev index.ts"
+        "start": "ts-node-dev index.ts",
+        "build": "tsc"
     },
     "repository": {
         "type": "git",

@@ -88,7 +88,7 @@ app.get('/config', (req, res) => {
     }
 });
 app.get('/live', (req, res) => {
-    res.render('live', {layout: 'live'});
+    res.render('empty', {layout: 'live-frame', url: ""});
 });
 
 app.listen(port, () => console.log(`App listening to port ${port}`));

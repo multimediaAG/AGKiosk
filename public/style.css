@@ -1,3 +1,12 @@
 .fullheight {
     min-height: 100vh;
 }
+
+iframe.fullpage-frame {
+    width: 100vw;
+    height: 100vh;
+}
+
+body.fullpage-frame {
+    overflow: hidden;
+}

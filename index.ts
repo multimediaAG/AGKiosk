@@ -15,6 +15,7 @@ interface Config {
         email: string;
         password: string;
     }[];
+    currentURL: string;
 };
 
 
@@ -77,9 +78,17 @@ app.post('/login', (req, res) => {
         });
     }
 });
+app.post('/config/currentURL/save', (req, res) => {
+    const { url } = req.body;
+
+    config.currentURL = url;
+    saveConfig();
+
+    res.redirect('/config');
+});
 app.get('/config', (req, res) => {
     if (res.locals.user) {
-        res.render('config');
+        res.render('config', {url: config.currentURL});
     } else {
         res.render('login', {
             message: 'Please login to continue',
@@ -88,7 +97,11 @@ app.get('/config', (req, res) => {
     }
 });
 app.get('/live', (req, res) => {
-    res.render('empty', {layout: 'live-frame', url: ""});
+    res.render('empty', {layout: 'live-frame', url: config.currentURL});
 });
 
 app.listen(port, () => console.log(`App listening to port ${port}`));
+
+function saveConfig() {
+    fs.writeFileSync(CONFIG_FILE, JSON.stringify(config));
+}

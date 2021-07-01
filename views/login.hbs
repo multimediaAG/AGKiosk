@@ -3,11 +3,7 @@
     <div class="row justify-content-md-center" style="margin-top: 100px">
         <div class="col-md-6">
 
-            {{#if message}}
-                <div class="alert {{messageClass}}" role="alert">
-                    {{message}}
-                </div>
-            {{/if}}
+            {{>messages}}
 
             <form method="POST" action="/login">
                 <div class="form-group">

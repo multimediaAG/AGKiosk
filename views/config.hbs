@@ -1,1 +1,13 @@
-Config ist hier, aber geschützt
+<div class="container">
+    <h1>AGKiosk Configuration</h1>
+    
+    {{>messages}}
+
+    <div class="card p-3">
+        <span class="card-title">Current URL:</span>
+        <form method="POST" action="/config/currentURL/save">
+            <input class="form-control" name="url" placeholder="URL" value="{{url}}">
+            <input type="submit" class="btn btn-outline-success" value="Save">
+        </form>
+    </div>
+</div>

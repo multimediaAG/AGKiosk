@@ -4,7 +4,8 @@ npm run build
 cd ./docker
 rm -f app/layouts
 rm -f app/partials
-cp ../dist app
+mkdir app
+cp -r ../dist app
 cp ../package.json app/package.json
 cp -r ../views app/views
 cp -r ../public app/public

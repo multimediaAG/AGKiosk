@@ -4,7 +4,7 @@ LABEL maintainer="Hannes Rüger"
 LABEL name="AGKiosk"
 
 RUN apk add tree
-RUN mkdir -p /app/data && mkdir /app
+RUN mkdir -p /app/data
 COPY app /app
 RUN tree /app
 RUN cd /app/dist && npm i

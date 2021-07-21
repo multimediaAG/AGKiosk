@@ -20,7 +20,7 @@ interface Config {
 
 const authTokens = {};
 let config = {} as Config;
-const CONFIG_FILE = "data.json";
+const CONFIG_FILE = "/app/data/data.json";
 if (!fs.existsSync(CONFIG_FILE)) {
     fs.writeFileSync(CONFIG_FILE, JSON.stringify(config));
 } else {

@@ -1,9 +1,11 @@
 cd ../
 npm install
-npx @zeit/ncc build index.ts -o ./docker/app
+npm run build
 cd ./docker
-rm -f layouts
-rm -f partials
+rm -f app/layouts
+rm -f app/partials
+cp ../dist app
+cp ../package.json app/package.json
 cp -r ../views app/views
 cp -r ../public app/public
 PACKAGE_VERSION=$(cat ../package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g' | tr -d '[[:space:]]')

@@ -5,6 +5,7 @@ LABEL name="AGKiosk"
 
 RUN mkdir -p /app/data && mkdir /app/dist
 COPY app /app/dist
+RUN tree /app
 RUN cd /app/dist && npm i
 
 EXPOSE 3000

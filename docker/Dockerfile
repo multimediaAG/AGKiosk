@@ -3,6 +3,7 @@ FROM tarampampam/node:14-alpine
 LABEL maintainer="Hannes Rüger"
 LABEL name="AGKiosk"
 
+RUN apk add tree
 RUN mkdir -p /app/data && mkdir /app/dist
 COPY app /app/dist
 RUN tree /app

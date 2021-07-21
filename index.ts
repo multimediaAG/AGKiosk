@@ -29,6 +29,7 @@ if (!fs.existsSync(CONFIG_FILE)) {
 const users = config?.users || [];
 
 app.set("view engine", "hbs");
+app.set("views", `${__dirname}/views`);
 app.engine("hbs", handlebars({
     layoutsDir: `${__dirname}/views/layouts`,
     extname: "hbs",
